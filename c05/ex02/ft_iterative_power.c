@@ -6,14 +6,14 @@
 /*   By: lpesaro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 21:38:10 by lpesaro           #+#    #+#             */
-/*   Updated: 2022/09/26 22:43:45 by lpesaro          ###   ########.fr       */
+/*   Updated: 2022/09/27 19:34:37 by lpesaro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_iterative_power(int nb, int power)
+int	ft_iterative_power(int nb, int power)
 {
-	int res;
-	int i;
+	int	res;
+	int	i;
 
 	i = 0;
 	res = 1;
@@ -26,5 +26,5 @@ int ft_iterative_power(int nb, int power)
 		res = res * nb;
 		power = power - 1;
 	}
-	return(res);
+	return (res);
 }
