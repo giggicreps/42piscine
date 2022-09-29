@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpesaro <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: lpesaro <lpesaro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 17:43:53 by lpesaro           #+#    #+#             */
-/*   Updated: 2022/09/29 16:49:46 by lpesaro          ###   ########.fr       */
+/*   Created: 2022/09/28 21:44:11 by lpesaro           #+#    #+#             */
+/*   Updated: 2022/09/29 00:27:49 by lpesaro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int ac, char **av)
+int	*ft_range(int min, int max)
 {
+	int	*tab;
 	int	i;
 
+	if (min >= max)
+		return (0);
+	if (!(tab = (int *)malloc (sizeof(int) * (max - min))))
+		return (0);
 	i = 0;
-	ac = 0;
-	while (av[0][i] != '\0')
+	while (min < max)
 	{
-		write(1, &av[0][i], 1);
+		tab[i] = min;
 		i++;
+		min++;
 	}
-	write(1, "\n", 1);
-	return (0);
+	return (tab);
 }
